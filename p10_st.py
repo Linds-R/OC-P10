@@ -58,7 +58,7 @@ with loading2:
     length = sel_col.text_input('length')
     
     if length is not '':
-        billet_pred = np.array([diagonal, height_left, height_right, margin_low, margin_up, length]).reshape(1,6)
+        billet_pred = pd.DataFrame(np.array([[diagonal, height_left, height_right, margin_low, margin_up, length]]), columns = ['diagonal', 'height_left', 'height_right', 'margin_low', 'margin_up', 'length'])
         billet_pred['genuine'] = clf.predict(billet_pred)
         disp_col.text('Nature du billet')
         disp_col.write(billet_pred.genuine[0])
