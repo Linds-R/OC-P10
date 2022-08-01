@@ -23,7 +23,6 @@ from sklearn.linear_model import LogisticRegression
 X_train = pd.read_csv("X_train.csv",sep=',')
 y_train = pd.read_csv("y_train.csv",sep=',')
 y_train.replace({True: 'Vrai', False: 'Faux'},inplace=True)
-y_train = y_train[0]
 clf = LogisticRegression(random_state=0).fit(X_train, y_train)
 
 
