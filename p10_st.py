@@ -39,10 +39,10 @@ with loading1:
         billets_production = billets_production[['diagonal', 'height_left', 'height_right','margin_low', 'margin_up','length']]
         
         results_rl = billets_production.copy()
-        results_rl['genuine'] = clf.predict(billets_production)
+        results_rl['Nature du billet'] = clf.predict(billets_production)
 
         disp_col.text('Nature des billets')
-        disp_col.write(results_rl.genuine)
+        disp_col.write(results_rl['Nature du billet'])
 
 
 with loading2:
